@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abhay Kumar Das" />
+    <title>Equal Voices</title>
+    <link rel="icon" type="images/x-icon" href="./lavatory.png" />
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-grid.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Ysabeau+Infant:wght@600&display=swap" rel="stylesheet">
+    <!-- css link -->
+    <link rel="stylesheet" href="./donate.css" />
+    <!-- Boxicon  -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <a href="./index.html">
+        <button ><img src="./back-button.png" id="reverse"  width="55px" height="55px" alt="navigate to main page"></button>
+    </a>
+    <div class="wrapper">
+        <form>
+            <h2>Donation Request From</h2>
+            <p>Please fill out the form below for donation.</p>
+            <h3>Donor's Info</h3>
+            <div class="input-group">
+
+                <div class="inputBox">
+                    <input type="text" required>
+                    <label>Full &nbsp; Name</label>
+                    <span class="material-symbols-outlined icon">
+                    person
+                    </span>
+                </div>
+                <div class="inputBox">
+                    <input type="Email" required>
+                    <label>Email &nbsp;Address</label>
+                    <span class="material-symbols-outlined icon">
+                        mail
+                        </span>
+                </div>
+                <div class="inputBox">
+                    <input type="number" required>
+                    <label> Phone &nbsp; Number</label>
+                    <span class="material-symbols-outlined icon">
+                        smartphone
+                        </span>
+                </div>
+
+                <div class="inputBox">
+                    <input type="number" required>
+                    <label> Aadhar &nbsp;Card</label>
+                    <span class="material-symbols-outlined icon">
+                        badge
+                        </span>
+                </div>
+                <div class="inputBox">
+                    <input type="date" style="margin-top: 1rem;" required>
+                    <label style="margin-bottom: 1rem;"> Data &nbsp;of &nbsp;Birth</label>
+            </div>
+            <h3>Donation Details</h3>
+            <div class="input-group">
+                <div class="inputBox">
+                    <input type="text" required>
+                    <label> Donation&nbsp; Title  </label>
+                    <span class="material-symbols-outlined icon">
+                        title
+                        </span>
+                </div>
+                <div class="inputBox">
+                    <input type="number" required>
+                    <label> Donation&nbsp; Amount  </label><span class="material-symbols-outlined icon">
+                        paid
+                        </span>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required>
+                    <label>Donation&nbsp; Description  </label>
+                    <span class="material-symbols-outlined icon">
+                        description
+                        </span>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="inpuutBox">
+                    <input type="checkbox">&nbsp; I Agree With The <a href="./T&C.html" style="text-decoration: none; color:#3586ff;" target="_blank">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="buttonhere">
+                <div class="inputBox">
+                        <button id="openModalBtn" class="button-89" value="PayNow" type="submit" role="button"> Request To Pay</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModalBtn" style="padding-left: 95%">&times;</span>
+          <h2>Thank You For Kindness !</h2>
+          <p>Your Details Will Be Fetched And We Will Send You A Link To Your Email For The Payment Process.</p>
+        </div>
+      </div>
+    
+   
+    <script>
+        let labels = document.querySelectorAll('label');
+
+        labels.forEach(label => {
+            label.innerHTML = label.innerText.split('').map((letter, i) => `<span style="transition-delay:${i * 50}ms">${letter}</span>`).join('');
+        });
+
+
+        // Get the modal element
+const modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+const openModalBtn = document.getElementById("openModalBtn");
+
+// Get the <span> element that closes the modal
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+// Function to open the modal
+function openModal() {
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Event listeners
+openModalBtn.addEventListener("click", openModal);
+closeModalBtn.addEventListener("click", closeModal);
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+});
+
+    </script>
+
+
+</body>
+
+
+</html>
